@@ -11,6 +11,10 @@ import Alamofire
 
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func seleccionarUsuario(){
+        
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(textField.text, forKey: "user")
     }
 
 
